@@ -1,10 +1,11 @@
 const multiples = require('./multiples.js');
 
 describe("Multiples.js's", () => {
-    test('Function: "get_spelled_out_search_index" should give 10 for multiples of 3, 01 for multiples of 5 and 11 for multiples of both', () => {
+    test('Function: "get_spelled_out_search_index" should give 10 for multiples of 3, 01 for multiples of 5, 11 for multiples of both and 00 for multiples of neither', () => {
       expect(multiples.get_spelled_out_search_index(3)).toBe("10");
       expect(multiples.get_spelled_out_search_index(15)).toBe("11");
       expect(multiples.get_spelled_out_search_index(5)).toBe("01");
+      expect(multiples.get_spelled_out_search_index(2)).toBe("00");
     });
 
     test('Function: "get_proper_print_value" should print out (in a p element) the number fed to it, unless its a multiple of 3, 5 or both, in which case it will print ot "Three","Five" or "ThreeAndFive" respectively', () => {
